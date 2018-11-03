@@ -13,7 +13,7 @@ select authors.name, count(*) as total
     order by total desc
     limit 3;
 
-select total_log.date, error_log.errors, total_log.total
+select total_log.date, round(1.0*error_log.errors/total_log.total*100, 1)
     from
     (select date_trunc('day', time) as date,
             count(*) as errors
