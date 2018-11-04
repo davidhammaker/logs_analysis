@@ -66,8 +66,9 @@ def third_query():
 
     Return:
         A list of tuples, each of which contains a timestamp with time zone
-        (truncated to the day) and a number representing the percentage
-        (rounded to the nearest 10th's place), listed in descending order.
+        (truncated to the day) and a number (class 'decimal.Decimal')
+        representing the percentage (rounded to the nearest 10th's place),
+        listed in descending order.
     """
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
