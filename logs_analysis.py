@@ -7,6 +7,7 @@ results of these queries are printed to the console and to a text file.
 """
 
 import psycopg2
+# from datetime import datetime as dt
 
 
 def first_query():
@@ -232,3 +233,25 @@ if __name__ == '__main__':
     answers_list = [answer_1, answer_2, answer_3]
     answers = '\n\n'.join(answers_list)
     print(answers)
+
+    # # Write to text file
+    # now_for_file_raw = str(dt.now())
+    # now_for_file = (now_for_file_raw[0:10] +
+    #                 '_' +
+    #                 now_for_file_raw[11:13] +
+    #                 '-' +
+    #                 now_for_file_raw[14:16] +
+    #                 '-' +
+    #                 now_for_file_raw[17:19])
+    # answers.replace('\n', '\r\n')
+    # file_name = "Logs_Analysis_" + now_for_file + '.txt'
+    # with open(file_name, 'w') as file:
+    #     file.write(answers)
+    #     file.close()
+    # # try:
+    # #     file_name = "Logs_Analysis_" + now_for_file + '.txt'
+    # #     text_file = open(file_name, "w")
+    # #     text_file.write(answers)
+    # #     text_file.close()
+    # # except Exception:
+    # #     print("(Could not record answers in text file)")
