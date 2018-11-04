@@ -3,7 +3,7 @@
 This code performs an analysis on a database of HTTP request logs on from a
 news website. The code uses psycopg2 as its PostgreSQL adapter. The code
 contains three functions, each of which performs a single SQL query. The
-results of these queries are printed to the console and to a text file.
+results of these queries are printed to the console.
 """
 
 import psycopg2
