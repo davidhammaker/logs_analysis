@@ -118,8 +118,7 @@ if __name__ == '__main__':
     # Format the title line and line break
     answer_1_list.append('   Article' +
                          ' ' * (max_article_length - 4) +
-                         '|' +
-                         '   Views')
+                         '|   Views')
     answer_1_list.append('-' * (max_article_length + 6) +
                          '+' +
                          '-' * (max_view_length + 6))
@@ -129,9 +128,7 @@ if __name__ == '__main__':
         line = ('   ' +
                 row[0] +
                 ' ' * (max_article_length - len(row[0])) +
-                '   ' +
-                '|' +
-                '   ' +
+                '   |   ' +
                 str(row[1]))
         answer_1_list.append(line)
 
@@ -156,8 +153,7 @@ if __name__ == '__main__':
     # Format the title line and line break
     answer_2_list.append('   Author' +
                          ' ' * (max_author_length - 3) +
-                         '|' +
-                         '   Views')
+                         '|   Views')
     answer_2_list.append('-' * (max_author_length + 6) +
                          '+' +
                          '-' * (max_view2_length + 6))
@@ -167,9 +163,7 @@ if __name__ == '__main__':
         line = ('   ' +
                 row[0] +
                 ' ' * (max_author_length - len(row[0])) +
-                '   ' +
-                '|' +
-                '   ' +
+                '   |   ' +
                 str(row[1]))
         answer_2_list.append(line)
 
@@ -221,8 +215,7 @@ if __name__ == '__main__':
     # Construct lines for Answer 3
     answer_3_list.append('   Date' +
                          ' ' * (max_date_length - 1) +
-                         '|' +
-                         '   Percentage')
+                         '|   Percentage')
     answer_3_list.append('-' * (max_date_length + 6) +
                          '+' +
                          '-' * 16)
