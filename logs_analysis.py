@@ -141,7 +141,7 @@ if __name__ == '__main__':
 
     # Answer question 2
 
-    # Set up a list which will contain lines for answer 1
+    # Set up a list which will contain lines for answer 2
     answer_2_list = ['Answer 2:']
 
     # Define lengths to use in sizing the table of results
@@ -173,6 +173,34 @@ if __name__ == '__main__':
                 str(row[1]))
         answer_2_list.append(line)
 
-    # Join and print final answer 1 table
+    # Join and print final answer 2 table
     answer_2 = '\n'.join(answer_2_list)
     print(answer_2)
+
+    # Answer question 3
+
+    # Set up a list which will contain lines for answer 3
+    answer_3_list = ['Answer 3:']
+
+    for row in q3:
+        date_num = str(row[0])
+        year = date_num[:4]
+        month_num = int(date_num[5:7])
+        month = ('January',
+                 'February',
+                 'March',
+                 'April',
+                 'May',
+                 'June',
+                 'July',
+                 'August',
+                 'September',
+                 'October',
+                 'November',
+                 'December')[month_num - 1]
+        day = int(date_num[8:10])
+        date = month + ' ' + str(day) + ', ' + year
+
+    answer_3 = '\n'.join(answer_3_list)
+    print(answer_3)
+    print(str(q3[0][0])[:10])
