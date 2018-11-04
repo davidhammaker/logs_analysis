@@ -98,8 +98,8 @@ def third_query():
 
 if __name__ == '__main__':
     q1 = first_query()
-    # q2 = second_query()
-    # q3 = third_query()
+    q2 = second_query()
+    q3 = third_query()
 
     # Answer question 1
 
@@ -138,3 +138,41 @@ if __name__ == '__main__':
     # Join and print final answer 1 table
     answer_1 = '\n'.join(answer_1_list)
     print(answer_1)
+
+    # Answer question 2
+
+    # Set up a list which will contain lines for answer 1
+    answer_2_list = ['Answer 2:']
+
+    # Define lengths to use in sizing the table of results
+    max_author_length = 0
+    max_view2_length = 0
+    for row in q2:
+        if max_author_length < len(row[0]):
+            max_author_length = len(row[0])
+        if max_view2_length < (len(str(row[1]))):
+            max_view2_length = (len(str(row[1])))
+
+    # Format the title line and line break
+    answer_2_list.append('   Author' +
+                         ' ' * (max_author_length - 3) +
+                         '|' +
+                         '   Views')
+    answer_2_list.append('-' * (max_author_length + 6) +
+                         '+' +
+                         '-' * (max_view2_length + 6))
+
+    # Format line data
+    for row in q2:
+        line = ('   ' +
+                row[0] +
+                ' ' * (max_author_length - len(row[0])) +
+                '   ' +
+                '|' +
+                '   ' +
+                str(row[1]))
+        answer_2_list.append(line)
+
+    # Join and print final answer 1 table
+    answer_2 = '\n'.join(answer_2_list)
+    print(answer_2)
