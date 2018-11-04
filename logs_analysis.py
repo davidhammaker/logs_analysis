@@ -182,7 +182,13 @@ if __name__ == '__main__':
     # Set up a list which will contain lines for answer 3
     answer_3_list = ['Answer 3:']
 
+    # Define list for holding dates and percentages
+    dates_and_percentages = []
+
+    # Parse dates and percentages
     for row in q3:
+
+        # Parse date
         date_num = str(row[0])
         year = date_num[:4]
         month_num = int(date_num[5:7])
@@ -201,6 +207,33 @@ if __name__ == '__main__':
         day = int(date_num[8:10])
         date = month + ' ' + str(day) + ', ' + year
 
+        # Convert percentage to string type
+        percentage = str(row[1])
+
+        dates_and_percentages.append((date, percentage))
+
+    # Define length to use in sizing the table of results
+    max_date_length = 0
+    for pair in dates_and_percentages:
+        if max_date_length < len(pair[0]):
+            max_date_length = len(pair[0])
+
+    # Construct lines for Answer 3
+    answer_3_list.append('   Date' +
+                         ' ' * (max_date_length - 1) +
+                         '|' +
+                         '   Percentage')
+    answer_3_list.append('-' * (max_date_length + 6) +
+                         '+' +
+                         '-' * 16)
+    for pair in dates_and_percentages:
+        line = ('   ' +
+                pair[0] +
+                ' ' * (max_date_length - len(pair[0])) +
+                '   |   ' +
+                pair[1])
+        answer_3_list.append(line)
+
+    # Join and print final answer 3 table
     answer_3 = '\n'.join(answer_3_list)
     print(answer_3)
-    print(str(q3[0][0])[:10])
