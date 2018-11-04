@@ -134,7 +134,6 @@ if __name__ == '__main__':
 
     # Join and print final answer 1 table
     answer_1 = '\n'.join(answer_1_list)
-    print(answer_1)
 
     # Answer question 2
 
@@ -169,7 +168,6 @@ if __name__ == '__main__':
 
     # Join and print final answer 2 table
     answer_2 = '\n'.join(answer_2_list)
-    print(answer_2)
 
     # Answer question 3
 
@@ -229,4 +227,7 @@ if __name__ == '__main__':
 
     # Join and print final answer 3 table
     answer_3 = '\n'.join(answer_3_list)
-    print(answer_3)
+
+    answers_list = [answer_1, answer_2, answer_3]
+    answers = '\n\n'.join(answers_list)
+    print(answers)
