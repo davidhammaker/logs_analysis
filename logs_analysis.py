@@ -94,3 +94,47 @@ def third_query():
     result = c.fetchall()
     db.close()
     return result
+
+
+if __name__ == '__main__':
+    q1 = first_query()
+    # q2 = second_query()
+    # q3 = third_query()
+
+    # Answer question 1
+
+    # Set up a list which will contain lines for answer 1
+    answer_1_list = ['Answer 1:']
+
+    # Define lengths to use in sizing the table of results
+    max_article_length = 0
+    max_view_length = 0
+    for row in q1:
+        if max_article_length < len(row[0]):
+            max_article_length = len(row[0])
+        if max_view_length < (len(str(row[1]))):
+            max_view_length = (len(str(row[1])))
+
+    # Format the title line and line break
+    answer_1_list.append('   Article' +
+                         ' ' * (max_article_length - 4) +
+                         '|' +
+                         '   Views')
+    answer_1_list.append('-' * (max_article_length + 6) +
+                         '+' +
+                         '-' * (max_view_length + 6))
+
+    # Format line data
+    for row in q1:
+        line = ('   ' +
+                row[0] +
+                ' ' * (max_article_length - len(row[0])) +
+                '   ' +
+                '|' +
+                '   ' +
+                str(row[1]))
+        answer_1_list.append(line)
+
+    # Join and print final answer 1 table
+    answer_1 = '\n'.join(answer_1_list)
+    print(answer_1)
