@@ -204,22 +204,25 @@ if __name__ == '__main__':
 
     # Define length to use in sizing the table of results
     max_date_length = 0
+    max_percentage_length = 0
     for pair in dates_and_percentages:
         if max_date_length < len(pair[0]):
             max_date_length = len(pair[0])
+        if max_percentage_length < len(pair[1]):
+            max_percentage_length = len(pair[1])
 
     # Construct lines for Answer 3
     answer_3_list.append('   Date' +
                          ' ' * (max_date_length - 1) +
                          '    Percentage')
     answer_3_list.append('-' * (max_date_length + 6) +
-                         '-' * 17)
+                         '-' * (15 + max_percentage_length))
     for pair in dates_and_percentages:
         line = ('   ' +
                 pair[0] +
                 ' ' * (max_date_length - len(pair[0])) +
                 '   -   ' +
-                pair[1])
+                pair[1] + '% errors')
         answer_3_list.append(line)
 
     # Join and print final answer 3 table
