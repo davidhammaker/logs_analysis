@@ -28,4 +28,4 @@ select total_log.date,
         group by date) as total_log
     on error_log.date = total_log.date
     where round(1.0*error_log.errors/total_log.total*100, 1) > 1
-    order by round(1.0*error_log.errors/total_log.total*100, 1) desc;
+    order by total_log.date desc;
