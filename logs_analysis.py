@@ -104,7 +104,7 @@ if __name__ == '__main__':
     # Answer question 1
 
     # Set up a list which will contain lines for answer 1
-    answer_1_list = ['Answer 1:']
+    answer_1_list = ['Top 3 Most Popular Articles:']
 
     # Define lengths to use in sizing the table of results
     max_article_length = 0
@@ -115,20 +115,14 @@ if __name__ == '__main__':
         if max_view_length < (len(str(row[1]))):
             max_view_length = (len(str(row[1])))
 
-    # Format the title line and line break
-    answer_1_list.append('   Article' +
-                         ' ' * (max_article_length - 4) +
-                         '    Views')
-    answer_1_list.append('-' * (max_article_length + 6) +
-                         '-' * (max_view_length + 7))
-
     # Format line data
     for row in q1:
         line = ('   ' +
                 row[0] +
                 ' ' * (max_article_length - len(row[0])) +
                 '   -   ' +
-                str(row[1]))
+                str(row[1]) +
+                ' Views')
         answer_1_list.append(line)
 
     # Join final answer 1 table
@@ -137,7 +131,7 @@ if __name__ == '__main__':
     # Answer question 2
 
     # Set up a list which will contain lines for answer 2
-    answer_2_list = ['Answer 2:']
+    answer_2_list = ['Most Popular Authors:']
 
     # Define lengths to use in sizing the table of results
     max_author_length = 0
@@ -148,20 +142,14 @@ if __name__ == '__main__':
         if max_view2_length < (len(str(row[1]))):
             max_view2_length = (len(str(row[1])))
 
-    # Format the title line and line break
-    answer_2_list.append('   Author' +
-                         ' ' * (max_author_length - 3) +
-                         '    Views')
-    answer_2_list.append('-' * (max_author_length + 6) +
-                         '-' * (max_view2_length + 7))
-
     # Format line data
     for row in q2:
         line = ('   ' +
                 row[0] +
                 ' ' * (max_author_length - len(row[0])) +
                 '   -   ' +
-                str(row[1]))
+                str(row[1]) +
+                ' Views')
         answer_2_list.append(line)
 
     # Join final answer 2 table
@@ -170,7 +158,7 @@ if __name__ == '__main__':
     # Answer question 3
 
     # Set up a list which will contain lines for answer 3
-    answer_3_list = ['Answer 3:']
+    answer_3_list = ['Days on which Over 1% of Requests Resulted in Errors:']
 
     # Define list for holding dates and percentages
     dates_and_percentages = []
@@ -212,11 +200,6 @@ if __name__ == '__main__':
             max_percentage_length = len(pair[1])
 
     # Construct lines for Answer 3
-    answer_3_list.append('   Date' +
-                         ' ' * (max_date_length - 1) +
-                         '    Percentage')
-    answer_3_list.append('-' * (max_date_length + 6) +
-                         '-' * (15 + max_percentage_length))
     for pair in dates_and_percentages:
         line = ('   ' +
                 pair[0] +
