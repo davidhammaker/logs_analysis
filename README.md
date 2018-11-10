@@ -18,9 +18,21 @@ The reporting tool does not employ the use of _views_.
 
 Follow these steps to set up the database and reporting tool, and then run the reporting tool.
 
+## Dependencies
+These files are being used from within a Linux virtual machine. To install a virtual machine on your computer, you will need access to a shell prompt (E.g. [Git Bash](https://git-scm.com/downloads) for Windows). You will also need to download [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/downloads.html). Once you have access to a shell prompt and have downloaded Vagrant and VirtualBox, create a new directory and install the virtual machine by running the following commands inside any directory of your choice:
+```
+$ mkdir [NAME-OF-YOUR-NEW-DIRECTORY]
+$ vagrant init ubuntu/trusty64
+$ vagrant up
+```
+To log into the virtual machine, run `$ vagrant ssh`. You may need to update the machine. Do this by running:
+```
+$ sudo apt-get update && sudo apt-get upgrade
+```
+
 ### Prepare the Database
 
-The project works in conjunction with the `news` database which Udacity provides. This project also employs a Linux-based virtual machine by using Vagrant and VirtualBox. If you do not have access to `news`, download `newsdata.sql` from Udacity's "Project: Logs Analysis" and (using the virtual machine) run `$ psql -d news -f newsdata.sql` from the `vagrant` directory.
+The project works in conjunction with the `news` database which Udacity provides. This project also employs a Linux-based virtual machine by using [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) (see _Dependencies_). To access to `news`, download the `newsdata.sql` file [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip). Extract `newsdata.sql` from the zip file and move it to the `vagrant` directory. Log into your virtual machine with `$ vagrant ssh` and run `$ psql -d news -f newsdata.sql` from the `vagrant` directory. Then run `$ psql -d news` to access the `news` database.
 
 ### Prepare the Reporting Tool
 
